@@ -34,7 +34,11 @@
             <div class="card-body">
 
                 <div class="card-image">
-                    <img src="{% url 'media' berita.gambar %}"  height="300" style="object-fit: cover; width: 100%;" alt="">
+                  {% if berita.gambar %}
+                    <img src="{{ url }}/media/{{ berita.gambar }}"  height="300" style="object-fit: cover; width: 100%;" alt="">
+                  {% else %}
+                    <p>Gambar tidak tersedia</p>
+                  {% endif %}
                 </div>
                 <div class="mt-1 text-bold">
                     <h4>{{berita.judul}}</h4>                     

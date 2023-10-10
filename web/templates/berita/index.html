@@ -41,14 +41,14 @@
 
                 <div class="d-flex flex-wrap">
                     {% for berita in berita %}
-                        <div class="col-md-3">
+                        <div class="col-md-3 mt-2 mb-1">
                             <div class="card">
+                                <div class="card-image">
+                                    <img src="{{ url }}/media/{{berita.gambar}}" height="200" style="object-fit: cover; width: 100%;" alt="">
+                                </div>
                                 <div class="card-body">
-                                    <div class="card-image">
-                                        <img src="{% url 'media' berita.gambar %}" width="200" height="200" style="object-fit: cover;" alt="">
-                                    </div>
                                     <div class="mt-1">
-                                        <a href="{% url 'berita' berita.id %}">
+                                        <a href="{{ url }}/berita/{{berita.id}}">
                                             {{berita.judul}}                           
                                         </a>
                                     </div>
